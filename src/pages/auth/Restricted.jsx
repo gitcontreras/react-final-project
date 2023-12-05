@@ -21,6 +21,7 @@ const Restricted = () => {
 
     return (
         <div className="flex flex-col w-full h-full items-center">
+                          <SendMessage/>
             <div className="flex flex-col items-center justify-center w-fit h-fit bg-slate-200 rounded-md p-8">
                 <h1 className="text-2xl font-bold text-slate-900">Messages</h1>
         {loading ? <span>Cargando...</span> : null}
@@ -32,9 +33,6 @@ const Restricted = () => {
             ))}
           </ul>
         ) : null}
-
-                <SendMessage/>
-
             </div>
         </div>
     )

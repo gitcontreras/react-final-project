@@ -34,8 +34,11 @@ const user = auth.currentUser;
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
-      console.log(form);
-      const res = await storeNewMessage(form);
+      form.date=Timestamp.fromDate(new Date());
+      if(form.message!="")
+         await storeNewMessage(form);
+       
+         e.target.reset();
     } catch (err) {
       console.log(err);
     }
@@ -49,7 +52,7 @@ const user = auth.currentUser;
         >
           <input
             type="text"
-            placeholder="Message"
+            placeholder="New Message"
             className="w-full p-2 rounded-md border border-slate-300 focus:outline-none focus:border-slate-500"
             name="message"
             onChange={handleChange}

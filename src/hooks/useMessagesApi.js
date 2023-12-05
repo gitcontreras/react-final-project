@@ -16,7 +16,7 @@ import {
   
     const getMessages = async () => {
       try {
-        const res = await query(collection(db, "messages"), orderBy("date","asc"), limit(20));
+        const res = await query(collection(db, "messages"), orderBy("date","desc"), limit(20));
   
         return onSnapshot(res, (querySnapshot) => {
           setData(
