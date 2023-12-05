@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useMessagesApi } from "../../hooks/useMessagesApi";
 import TextMessage from "../../components/TextMessage";
+import SendMessage from "../../components/SendMessage";
 
 
 const Restricted = () => {
@@ -32,9 +33,8 @@ const Restricted = () => {
           </ul>
         ) : null}
 
+                <SendMessage/>
 
-                <input type="text" className="w-full text-black p-2 font-bold rounded-md border border-slate-300 focus:outline-none focus:border-slate-500" />
-                <button className="w-full p-2 mt-4 bg-slate-500 text-white rounded-md hover:bg-slate-600">Send</button>
             </div>
         </div>
     )

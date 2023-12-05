@@ -4,6 +4,7 @@ import {
     onSnapshot,
     orderBy,
     query,
+    limit
   } from "firebase/firestore";
   import { useState } from "react";
   import { db } from "../main";
@@ -15,7 +16,7 @@ import {
   
     const getMessages = async () => {
       try {
-        const res = await query(collection(db, "messages"));
+        const res = await query(collection(db, "messages"), orderBy("date","asc"), limit(20));
   
         return onSnapshot(res, (querySnapshot) => {
           setData(
